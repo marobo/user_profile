@@ -28,12 +28,6 @@ We need to configure the email host server as well in the `settings.py` for conf
 
 ```
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-
-EMAIL_USE_TLS = True  
-EMAIL_HOST = 'smtp.gmail.com'  
-EMAIL_HOST_USER = 'youremail@gmail.com'  
-EMAIL_HOST_PASSWORD = 'yourpassword'  
-EMAIL_PORT = 587
 ```
 
 It will send out the text confirmation mail via terminal on your running server, if the creation account form is valid
@@ -57,12 +51,45 @@ Make a link for the user to click and visit the Create new account form in somew
 <a href="{% url 'create_account' %}">Create New Account</a>
 ```
 
-Let's run server and then, try to clikc on that link, you will see the Create you new account form
+Let's run the server and then try to Create a new account. If the create form is valid, you'll see the feedback message `Please check your email!`.
+Now go to the terminal server you running, you'll see email confirmation messages like below:
+```
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Welcome to localhost:8009
+From: webmaster@localhost
+To: emailyouresgistered@gmail.com
+Date: Mon, 11 Mar 2024 05:21:28 -0000
+Message-ID: <171013448854.74991.4945198941969335774@onorios-air.busa>
+
+
+Hello admin1,
+
+Please verify your email by clicking on the following link.
+Link: http://localhost:8009/activate/Mw/c3pljs-4d8452e391dee5d266616a6bfa7ace8a
+
+
+Many thanks
+Dev Team
+
+-------------------------------------------------------------------------------
+```
+
+
 
 # Note
-This is just for playing in locally. If you wanna like to send the confirmation email to the real email address that user entering in the creations from, you need to change:
+This is just for playing in locally. If you wanna like to send the confirmation email to the real email address that user trying enter in the creations from, you need to change:
 ```
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" to EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+```
+and add those email variable in the `settings.py` file
+```
+EMAIL_USE_TLS = True  
+EMAIL_HOST = 'smtp.gmail.com'  
+EMAIL_HOST_USER = 'youremail@gmail.com'  
+EMAIL_HOST_PASSWORD = 'yourpassword'  
+EMAIL_PORT = 587
 ```
 
 Please don't use your real email password in EMAIL_HOST_PASSWORD. Try generate it from gmail app password.
