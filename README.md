@@ -5,7 +5,7 @@ Make sure your django project is setup already ([https://onydev.pykafe.org/tet/d
 ### Let's Get started
 Git clone this repository into your existing django project
 ```
-git clone https://github.com/marobo/user_registration.git
+git clone https://github.com/marobo/user_profile.git
 ```
 
 To include the app in your project, you need to add a reference to its configuration class in the **INSTALLED_APPS** section in `setting.py`. 
