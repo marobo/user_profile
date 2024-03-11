@@ -10,7 +10,7 @@ git clone https://github.com/marobo/user_profile.git
 
 To include the app in your project, you need to add a reference to its configuration class in the **INSTALLED_APPS** section in `setting.py`. 
 
-Edit the `your_project/settings.py` file and add the `user_registration` app to the **INSTALLED_APPS** setting. It’ll look like this:
+Edit the `your_project/settings.py` file and add the `user_profile` app to the **INSTALLED_APPS** setting. It’ll look like this:
 
 ```
 INSTALLED_APPS = [
