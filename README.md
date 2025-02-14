@@ -53,7 +53,7 @@ urlpatterns = [
 Let's run server and then try to Sign Up:
 ```
 python manage.py runserver
-http://localhost:8000/signup
+http://localhost:8000/create-account
 ```
 
 When the Sign Up form is submitted successfully you'll see the feedback message `Please check your email!`.
